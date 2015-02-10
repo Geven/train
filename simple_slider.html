@@ -1,0 +1,44 @@
+<html>
+<head>
+    <style>
+
+    </style>
+    <script>
+
+        var image1 = new Image();
+        image1.src = 'http://localhost/demo/pictures/3ee7594aef697fc0927bbca025697654.jpg';
+
+        var image2 = new Image();
+        image2.src = 'http://localhost/demo/pictures/71c31504dd62919544f221b66ccfbe1f.jpg';
+
+        var image3 = new Image();
+        image3.src = 'http://localhost/demo/pictures/92ee1b27098a849a56c3db628b888472.jpg';
+
+    </script>
+
+
+</head>
+<body>
+<img src="http://localhost/demo/pictures/3ee7594aef697fc0927bbca025697654.jpg" name="slider">
+
+
+<script>
+    var step = 1;
+    function slideit(){
+    if(!document.images)
+    return false;
+    document.images.slider.src = eval("image"+step+".src");
+
+    if(step<3)
+    step++;
+    else step = 1;
+
+    setTimeout("slideit()",2500);
+    }
+
+    slideit();
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset = "UTF-8">
+    <title>Добавление товаров</title>
+    <script src="../bootstrap/bootstrap/js/bootstrap-tagsinput.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+    <script src="../bootstrap/bootstrap/js/city_selection.js"></script>
+    <link rel="stylesheet" href="../bootstrap/bootstrap/css/adding_product.css">
+</head>
+<body>
+<form id="mainForm">
+    <div class="companyName">
+        <label id="companyNameLabel">
+        Название компании
+        </label>
+
+        <div id="companyNameDiv">
+            <input type="text" id="companyNameInput" name="nameOfCompany"/>
+        </div>
+    </div>
+    <div class="companyTelephone">
+        <label id="companyTelephoneLabel">
+            Контактный телефон
+        </label>
+
+        <div id="companyTelephoneDiv">
+            <input type="text" id="companyTelephoneInput" name="telephoneOfCompany"/>
+            <div id="errorName"></div>
+        </div>
+    </div>
+
+    <div class="companyEmail">
+        <label id="companyEmailLabel">
+            Электронная почта
+        </label>
+
+        <div id="companyEmailDiv">
+            <input id="companyEmailInput" type="text" name="emailOfCompany">
+        </div>
+    </div>
+
+    <div class="companyReg">
+        <label id="companyRegLabel">Область</label>
+        <div id="companyRegDiv">
+
+            <select id="companyRegInput" name="regOfCompany">
+                <option value="">--Выберите область--</option>
+                <option>Брестская</option>
+                <option>Витебская</option>
+                <option>Гомельская</option>
+                <option>Гродненская</option>
+                <option>Минская</option>
+                <option>Могилевская</option>
+                 </select>
+
+        </div>
+    </div>
+
+    <div class="companyCity">
+        <label id="companyCityLabel">Город</label>
+        <div id="companyCityDiv">
+            <select id="companyCityInput" name="cityOfCompany">
+            </select>
+
+        </div>
+    </div>
+
+    <div class="companyCat">
+        <label id="companyCatLabel">Категория</label>
+        <div id="companyCatDiv">
+            <select id="companyCatInput" name="catOfCompany">
+                <option value="">--Выберите категорию--</option>
+                <option >sd</option>
+            </select>
+        </div>
+    </div>
+
+
+    <div class="companyHeader">
+        <label id="companyHeaderLabel">Название объявления</label>
+        <div id="companyHeaderDiv">
+            <input type="text" id="companyHeaderInput" name="headerOfCompany" />
+        </div>
+    </div>
+
+    <div class="companyText">
+        <label id="companyTextLabel">Описание объявления</label>
+        <div id="companyTextDiv">
+            <textarea id="companyTextInput" name="textOfCompany"></textarea>
+        </div>
+    </div>
+
+    <div class="submitButton">
+        <div id="submitButtonInput">
+            <button type="submit" onclick="return checkForm();">Отправить</button>
+
+        </div>
+
+    </div>
+
+</form>
+<script src="../bootstrap/bootstrap/js/validation_of_form.js"></script>
+
+
+
+</body>
+</html>

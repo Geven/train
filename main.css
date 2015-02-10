@@ -1,0 +1,47 @@
+.wrapper{
+    width:360px;
+    height:200px;
+    margin:180 auto;
+}
+
+.form_login{
+    margin-left: 80px;
+}
+
+.password_login{
+    margin-left:72px;
+    margin-top:10px;
+}
+
+.gender_male{
+    margin-left: 95px;
+    margin-top: 10px;
+}
+
+.gender_selection{
+    width:143px;
+    height: 23px;
+}
+
+.product_type{
+    margin-left: 28px;
+    margin-top: 20px;
+}
+
+.radio_buttons{
+    width:110px;
+    height:50px;
+    margin-left:95px;
+    margin-top:-26px;
+}
+
+.dob{
+    margin-left:-100px;
+
+}
+
+.submit_button{
+    position: absolute;
+    margin-left:110px;
+    margin-top: 20px;
+}

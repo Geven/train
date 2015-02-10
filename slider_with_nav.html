@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+<style>
+    body{
+        background-color: green;
+    }
+    .slider_nav {
+        width: 400px; height: 300px;
+        overflow: hidden;
+        position: relative; /* for overflow: hidden to work in IE7 */
+        border: 1px solid black;
+    }
+    .slider_nav > ul {
+        /* styled by JS to match the added width and height of all <li>’s */
+        position: relative;
+        -webkit-transition: .5s left;
+        -moz-transition: .5s left;
+        -ms-transition: .5s left;
+        -o-transition: .5s left;
+
+        list-style: none;
+        margin: 0; padding: 0;
+    }
+    .slider_nav > ul > li {
+        float: right;
+        width: 400px; height: 300px;
+    }
+</style>
+
+<script>
+    var Slider = function() {this.fuckjavascript.apply(this, arguments)}
+    Slider.prototype = {
+
+        fuckjavascript: function(slider) {
+            this.ul = slider.children[0]
+            this.li = this.ul.children
+
+            // make <ul> as large as all <li>’s
+            this.ul.style.width = (this.li[0].innerWidth * this.li.length) + 'px'
+
+            this.currentIndex = 0
+        },
+
+        goTo: function(index) {
+            // filter invalid indixes
+            if (index < 0 || index > this.li.length - 1)
+                return
+
+            // move <ul> left
+            this.ul.style.left = '-' + (100 * index) + '%'
+
+            this.currentIndex = index
+        },
+
+        goToPrev: function() {
+            this.goTo(this.currentIndex - 1)
+        },
+
+        goToNext: function() {
+            this.goTo(this.currentIndex + 1)
+        }
+    }
+</script>
+
+<div class="slider_nav">
+    <ul>
+        <li><div class="center_block">
+            <p id="white_text">Знакомство с бесплатного видеокурса по javascript</p>
+            <p id="small_text">Продолжительность 60 минут</p>
+
+        </div></li>
+        <li><div class="center_block">
+            <p id="white_text">Знакомство с бесплатного видеокурса по javascript</p>
+            <p id="small_text">Продолжительность 1160 минут</p>
+
+        </div></li>
+        <li><div class="center_block">
+            <p id="white_text">Знакомство с бесплатного видеокурса по javascript</p>
+            <p id="small_text">Продолжительность 160 минут</p>
+
+        </div></li>
+        <li><div class="center_block">
+            <p id="white_text">Знакомство с бесплатного видеокурса по javascript</p>
+            <p id="small_text">Продолжительность 60 минут</p>
+
+        </div></li>
+    </ul>
+</div>
+
+<script>
+    var sliders = []
+    $('.slider_nav').each(function() {
+        sliders.push(new Slider(this))
+    })
+</script>
+
+<div>
+    <ul>
+        <li class="left_arrow"><a href="javascript:sliders[0].goToPrev()"><img src="http://localhost/cources/images/mock_41.png"></a></li>
+        <li class="right_arrow"><a href="javascript:sliders[0].goToNext()"><img src="http://localhost/cources/images/mock_06.png"></a></li>
+    </ul>
+
+</div>
+</body>
+</html>
